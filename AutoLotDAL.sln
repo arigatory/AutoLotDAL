@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoLotDAL", "AutoLotDAL\AutoLotDAL.csproj", "{1CA0929B-AE1E-4A73-9E62-976BD76CED7B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1CA0929B-AE1E-4A73-9E62-976BD76CED7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CA0929B-AE1E-4A73-9E62-976BD76CED7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CA0929B-AE1E-4A73-9E62-976BD76CED7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CA0929B-AE1E-4A73-9E62-976BD76CED7B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {80EFB895-3511-41CA-9761-669B34FCC54A}
+	EndGlobalSection
+EndGlobal
