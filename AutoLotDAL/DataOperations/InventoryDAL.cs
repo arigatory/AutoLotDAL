@@ -35,30 +35,52 @@ namespace AutoLotDAL.DataOperations
         }
 
         public List<Car> GetAllInventory()
-    {
-        OpenConnection();
-        List<Car> inventory = new List<Car>();
-        string sql = "Select * From Inventory";
-        using (SqlCommand command = new SqlCommand(sql, _sqlConnection))
         {
-            command.CommandType = CommandType.Text;
-            SqlDataReader dataReader = command.ExecuteReader(CommandBehavior.CloseConnection);
-            while (dataReader.Read())
+            OpenConnection();
+            List<Car> inventory = new List<Car>();
+            string sql = "Select * From Inventory";
+            using (SqlCommand command = new SqlCommand(sql, _sqlConnection))
             {
-                inventory.Add(new Car
+                command.CommandType = CommandType.Text;
+                SqlDataReader dataReader = command.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dataReader.Read())
                 {
-                    CarId = (int)dataReader["CarId"],
-                    Color = (string)dataReader["Color"],
-                    Make = (string)dataReader["Make"],
-                    PetName = (string)dataReader["PetName"]
-                });
+                    inventory.Add(new Car
+                    {
+                        CarId = (int)dataReader["CarId"],
+                        Color = (string)dataReader["Color"],
+                        Make = (string)dataReader["Make"],
+                        PetName = (string)dataReader["PetName"]
+                    });
+                }
+                dataReader.Close();
             }
-            dataReader.Close();
+         return inventory;
         }
-        return inventory;
+
+        public Car GetCar(int id)
+        {
+            OpenConnection();
+            Car car = null;
+            string sql = $"Select * From Inventory where CarId = {id}"; using (SqlCommand command = new SqlCommand(sql, _sqlConnection))
+            {
+                command.CommandType = CommandType.Text;
+                SqlDataReader dataReader = command.ExecuteReader(CommandBehavior.CloseConnection); while (dataReader.Read())
+                {
+                    car = new Car
+                    {
+                        CarId = (int)dataReader["CarId"],
+                        Color = (string)dataReader["Color"],
+                        Make = (string)dataReader["Make"],
+                        PetName = (string)dataReader["PetName"]
+                    };
+                }
+                dataReader.Close();
+            }
+            return car;
+        }
+
+
+
     }
-
-
-
-}
 }
